@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+    <title>UI Router Nav Demo</title>
+    <!-- Styles -->
+    <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link data-require="fontawesome@*" data-semver="4.1.0" rel="stylesheet" href="fonts/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Scripts -->
+    <script data-require="jquery@*" data-semver="2.0.3" src="js/jquery-2.0.3.min.js"></script>
+    <script data-require="bootstrap@*" data-semver="3.1.1" src="js/bootstrap.min.js"></script>
+
+    <script src="js/angular.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-sanitize.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+        <script src="js/moment.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+
+<!-- Latest compiled and minified Locales 
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+
+-->
+    
+    <!-- App Scripts -->
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Top Nav -->
+    <nav class="navbar navbar-default">
+      <div class="navbar-brand" ui-sref="home">Vellore Hotel Automation Project</div>
+    </nav>
+    <!-- Content -->
+    <div >
+      <div ui-view></div>
+    </div>
+    
+  </body> 
+</html>

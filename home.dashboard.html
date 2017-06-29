@@ -1,0 +1,15 @@
+<div class="container">
+	<!-- top tiles -->
+	<div class="data_pane row tile_count" >
+
+		<div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count" ng-repeat="data in spice">
+			<div class="left"></div>
+			<div class="right" ng-class="data.status == 1 ? 'green' : 'red'">
+				<span class="room">Room {{data.room_no}}</span>
+				<div class="action_by">{{data.action_by}}</div>
+				<div class="date">{{data.date}}</div>
+			</div>
+		</div>
+	</div>
+
+</div>

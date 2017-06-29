@@ -1,0 +1,28 @@
+<div id="page-wrapper">
+  <div id="page-viewport">
+    <div id="sidebar">
+      <div id="sidebar-header">
+        <a href="" class="toggle-sidebar"><h3>Sidebar</h3></a>
+        <span class="pull-right">
+          <a href="" class="toggle-sidebar btn btn-default">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span> 
+      </div>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a ui-sref="home.dashboard">Dashboard<span class="pull-right"><i class="fa fa-tachometer"></i></span></a>
+        </li>
+        <li><a ui-sref="home.report">Report<span class="pull-right"><i class="fa fa-table"></i></span></a>
+        </li>
+        <li><a ui-sref="home.addon">AddOn Page<span class="pull-right"><i class="fa fa-upload"></i></span></a>
+        </li>
+      </ul>
+    </div>
+    <div id="sidebar-page-content">
+      <div ui-view></div>
+    </div>
+  </div>
+</div>
+<script src="sidebar.js"></script>
+
+
