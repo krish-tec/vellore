@@ -1,12 +1,12 @@
 app.controller('dashboardController', ['$scope', '$http', '$timeout', '$interval', function($scope, $http, $timeout, $interval) {
 
     $("data_pane").hide();
-    
+
     $scope.getData = function() {
       $http({
           
           method: 'GET',
-          url: 'http://localhost/node/room_status.php'
+          url: '../node/room_status.php'
           
       }).then(function (response) {
 
@@ -41,7 +41,7 @@ app.controller('reportController', ['$scope', '$http', function($scope, $http) {
       $http({
           
           method: 'GET',
-          url: 'http://localhost/node/fetch.php'
+          url: '../node/fetch.php'
           
       }).then(function (response) {
 
