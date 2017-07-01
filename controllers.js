@@ -6,7 +6,7 @@ app.controller('dashboardController', ['$scope', '$http', '$timeout', '$interval
       $http({
           
           method: 'GET',
-          url: '../node/room_status.php'
+          url: 'php/room_status.php'
           
       }).then(function (response) {
 
@@ -41,39 +41,17 @@ app.controller('reportController', ['$scope', '$http', function($scope, $http) {
       $http({
           
           method: 'GET',
-          url: '../node/fetch.php'
+          url: 'php/fetch.php'
           
       }).then(function (response) {
 
               response.data.result.forEach(function (dataItem) {
 
-                var dt = moment(dataItem.date, ["YYYY-MM-DD hh:mm:ssa"]);
-                var now = moment();
-                var duration = moment.duration(now.diff(dt));
-                var dateDiffInSec = duration.asSeconds();
-
-                // Date Format : 2017-06-23 06:49:29pm
-                dataItem.date = dt.format("dddd, MMMM Do YYYY, h:mm:ss a");
-
-                if(dateDiffInSec < 60){
-                    var conditionTime = dateDiffInSec + " Seconds"
-                } else if(dateDiffInSec > 60 && dateDiffInSec < 3600){
-                    var conditionTime = Math.round(dateDiffInSec/60) + " Minutes"
-                }else if(dateDiffInSec > 3600 && dateDiffInSec < 3600*60){
-                    var hours = dateDiffInSec/(60*60);
-                    var mins = (dateDiffInSec/(60*60)-Math.floor(hours))*60;
-                    var conditionTime = Math.floor(hours) + " Hours " + Math.floor(mins) + " Minutes";
-                }else if(dateDiffInSec > 3600*24){
-                    var days = dateDiffInSec/(60*60*24);
-                    var hours = (dateDiffInSec/(60*60*24)-Math.floor(days))*24
-                    var conditionTime = Math.floor(days) + " Days " + Math.floor(hours) + " Hours";
-                }
-
                 if(dataItem.status == 1){
-                      dataItem.condition = "ON Since " + conditionTime;
+                      dataItem.condition = "ON Since " + dataItem.conditionTime;
                       dataItem.status = "ON";
                 } else if(dataItem.status == 0){
-                      dataItem.condition = "OFF Since " + conditionTime;
+                      dataItem.condition = "OFF Since " + dataItem.conditionTime;
                       dataItem.status = "OFF";
 
                 }
@@ -100,3 +78,22 @@ app.controller('reportController', ['$scope', '$http', function($scope, $http) {
     $scope.getData();
 
 }]);
+
+
+app.controller('loginController', ['$scope','$location','$state', function($scope,$location,$state) {
+
+  $scope.username = "";
+  $scope.password = "";
+
+  $scope.login = function () {
+      if($scope.username == "admin" &&  $scope.username == "admin"){
+          $state.go('home.dashboard')
+       } else {
+          alert('Wrong Username and Password');
+       }
+
+    }
+
+
+}]);
+
